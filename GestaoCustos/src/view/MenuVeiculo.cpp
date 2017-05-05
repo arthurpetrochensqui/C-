@@ -9,8 +9,9 @@
 #include <iostream>
 namespace std {
 
-enum CHOICES {LISTAR=1,CADASTRAR,ATUALIZAR,EXCLUIR,SAIR};
-
+enum CHOICES {
+	LISTAR = 1, CADASTRAR, ATUALIZAR, EXCLUIR, SAIR
+};
 
 MenuVeiculo::MenuVeiculo() {
 	// TODO Auto-generated constructor stub
@@ -30,16 +31,29 @@ void MenuVeiculo::listarMenu() {
 	cout << "1 listar veiculo\n" << "2 - Cadastrar Veiculo\n"
 			<< "3 - Pesquisar Veiculo\n" << "4 - Excluir Veiculo\n"
 			<< "5 - Sair\n" << endl;
-	cin>>choice;
+
 	//while (choice != 5) {
+	do {
+		cin >> choice;
 		switch (choice) {
-		case 1:
-			cout << "Cadastrar Veiculo\n";
+		case LISTAR:
+			cout << "Listar Veiculos :" << endl;
 			break;
-		case 5:
-			cout << "Exit";
+		case CADASTRAR:
+			cout << "Cadastrar Veiuclos " << endl;
+			break;
+		case ATUALIZAR:
+			cout << "Atualizar Veiculo" << endl;
+			break;
+		case EXCLUIR:
+			cout << "Deleter Veiculo" << endl;
+			break;
+		case SAIR:
+			cout << "Sair";
 			break;
 		}
+	} while (choice < 5);
+
 	//}
 }
 } /* namespace std */

@@ -18,11 +18,13 @@ public:
 	Veiculo();
 
 	//Construct that receive the values of proper
-	Veiculo(int,string);
+	Veiculo(int, string);
 
 	virtual ~Veiculo();
 
-	bool lerVeiculo(){return true;}
+	bool lerVeiculo() {
+		return true;
+	}
 
 	//Define method encapsulation id
 	int getVeiculoId();
@@ -31,8 +33,6 @@ public:
 	//define method encapsulation placa
 	string getPlaca();
 	void setPlaca(string);
-
-
 
 private:
 	int id;

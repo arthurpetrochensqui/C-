@@ -10,10 +10,32 @@
 namespace std {
 
 Custos::Custos() {
-	// TODO Auto-generated constructor stub
 
 }
 
+//construct overload
+Custos::Custos(int id, string n) {
+	codigo = id;
+	nome = n;
+}
+
+//Method encapsulate get and set id
+void Custos::setCodigo(int id) {
+	codigo = id;
+}
+
+int Custos::getCodigo() {
+	return codigo;
+}
+
+//Method encapsulate get and set Name
+void Custos::setNome(string n) {
+	nome = n;
+}
+
+string Custos::getNome() {
+	return nome;
+}
 Custos::~Custos() {
 	// TODO Auto-generated destructor stub
 }

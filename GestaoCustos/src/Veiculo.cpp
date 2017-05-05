@@ -15,28 +15,28 @@ Veiculo::Veiculo() {
 }
 
 //Implement Construct that receive the value
-Veiculo::Veiculo(int i, string p){
-	id=i;
-	placa=p;
+Veiculo::Veiculo(int i, string p) {
+	id = i;
+	placa = p;
 }
 
 Veiculo::~Veiculo() {
 	// TODO Auto-generated destructor stub
 }
 
-int Veiculo::getVeiculoId(){
+int Veiculo::getVeiculoId() {
 	return id;
 }
-void Veiculo::setVeiculoId(int i){
-	id =i;
+void Veiculo::setVeiculoId(int i) {
+	id = i;
 }
 
 //Implements Method Placa
-string Veiculo::getPlaca(){
+string Veiculo::getPlaca() {
 	return placa;
 }
 
-void Veiculo::setPlaca(string str){
-	placa =str;
+void Veiculo::setPlaca(string str) {
+	placa = str;
 }
 } /* namespace std */
