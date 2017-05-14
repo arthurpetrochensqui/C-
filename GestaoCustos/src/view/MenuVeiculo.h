@@ -8,6 +8,8 @@
 #ifndef SRC_VIEW_MENUVEICULO_H_
 #define SRC_VIEW_MENUVEICULO_H_
 
+#include "../control/VeiculoControl.h"
+
 namespace std {
 
 class MenuVeiculo {

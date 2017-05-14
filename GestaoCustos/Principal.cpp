@@ -6,6 +6,8 @@
  */
 #include <iostream>
 #include "src/view/MenuVeiculo.h"
+#include "src/view/MenuCustos.h"
+#include "src/view/MenuTipoConta.h"
 using namespace std;
 
 //Get option from user
@@ -16,7 +18,9 @@ int optionChoice(); //prototype
 int main(){
 
 	MenuVeiculo veiculo;
-	cout<<"Menu Principal -Escolha Uma Opção"<<endl;
+	MenuCustos menuCusto;
+	MenuTipoConta menuTipoConta;
+	cout<<"\Menu Principal - Escolha Uma Opção"<<endl;
 	//store user choice
 	int choice;
 
@@ -24,23 +28,33 @@ int main(){
 	while((choice=optionChoice())!=-1){
 		switch(choice){
 				case 1:
-					cout<<"Escolheu Veiculo";
+					//cout<<"Escolheu Veiculo";
 					veiculo.listarMenu();
 
 
 					break;
 				case 2:
-					cout<<"Escolheu outra opcao";
+
+					menuCusto.showMenu();
+					break;
+					//cout<<"Escolheu outra opcao";
+
+				case 3:
+					menuTipoConta.showMenu();
+					break;
 				}
+
 	}
 }
 
 //Implements Menu Option Information About GestaoCustos
 int optionChoice(){
-	cout<<"1 - Veiculo\n";
-	cout<<"2 - Custos\n";
+	cout<<"\n Selecione uma opção \n 1 - Veiculo";
+	cout<<"\n 2 - Custos";
+	cout<<"\n 3 - Tipo Conta";
 
 	int opcao;
+	cout<<"\n ?:";
 	cin>>opcao;
 
 	return opcao;

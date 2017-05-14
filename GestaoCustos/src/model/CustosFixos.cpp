@@ -9,13 +9,30 @@
 
 namespace std {
 
+//Sobrecarga operador stream inserção; não pode ser uma função membro
+//se nós quiser acessar a operacao como cout<<algumCustoFixo
+ostream &operator<<(ostream &output, const CustosFixos &cf){
+	output <<cf.codigo <<cf.nome<<"\n";
+	return output;
+}
+
+//Sobrecarga operador strem extração, não pose ser uma função membro
+istream &operator>>(istream &input, CustosFixos &cf){
+
+	input>>cf.codigo>>cf.nome;
+	return input;
+}
+
+
 CustosFixos::CustosFixos() {
 
 }
 
-CustosFixos::CustosFixos(int id, string n) :
-		Custos(id, n) {
-	nome = n;
+CustosFixos::CustosFixos(int id, string n, int cc) :
+		Custos(id, n,cc) {
+	setCodigo(id);
+	setNome(n);
+	setCodigoContabil(cc);
 
 }
 

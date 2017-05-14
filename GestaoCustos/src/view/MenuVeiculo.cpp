@@ -26,30 +26,33 @@ void MenuVeiculo::listarMenu() {
 	//This Method  must list option that user go realize in the classe:
 	cout << "MenuVeiculo: Selecione um opção:" << endl;
 
-	int choice;
+	VeiculoControl vc;
 
-	cout << "1 listar veiculo\n" << "2 - Cadastrar Veiculo\n"
-			<< "3 - Pesquisar Veiculo\n" << "4 - Excluir Veiculo\n"
-			<< "5 - Sair\n" << endl;
+	int choice;
 
 	//while (choice != 5) {
 	do {
+
+		cout << "\n1 - listar veiculo\n" << "2 - Cadastrar Veiculo\n"
+				<< "3 - Pesquisar Veiculo\n" << "4 - Excluir Veiculo\n"
+				<< "5 - Sair\n" << endl;
+
 		cin >> choice;
 		switch (choice) {
 		case LISTAR:
-			cout << "Listar Veiculos :" << endl;
+			vc.listarVeiculo();
 			break;
 		case CADASTRAR:
-			cout << "Cadastrar Veiuclos " << endl;
+			vc.inserirVeiculo();
 			break;
 		case ATUALIZAR:
-			cout << "Atualizar Veiculo" << endl;
+			vc.alterarVeiculo();
 			break;
 		case EXCLUIR:
-			cout << "Deleter Veiculo" << endl;
+			vc.removerVeiculo();
 			break;
 		case SAIR:
-			cout << "Sair";
+			cout << "Sair\n";
 			break;
 		}
 	} while (choice < 5);

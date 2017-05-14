@@ -5,8 +5,8 @@
  *      Author: arthur
  */
 
-#ifndef SRC_VEICULO_H_
-#define SRC_VEICULO_H_
+#ifndef SRC_MODEL_VEICULO_H_
+#define SRC_MODEL_VEICULO_H_
 
 #include <string>
 #include <iostream>
@@ -17,8 +17,9 @@ class Veiculo {
 public:
 	Veiculo();
 
+
 	//Construct that receive the values of proper
-	Veiculo(int, string);
+	Veiculo(int, string,string, int);
 
 	virtual ~Veiculo();
 
@@ -34,11 +35,20 @@ public:
 	string getPlaca();
 	void setPlaca(string);
 
+	string getRenavam();
+	void setRenavam(string);
+
+	int getQuilometragem();
+	void setQuilmetragem(int);
+
+
 private:
 	int id;
-	string placa;
+	char placa[20];
+	char renavam[20];
+	int quilometragem;
 };
 
 /* namespace std */
 }
-#endif /* SRC_VEICULO_H_ */
+#endif /* SRC_MODEL_VEICULO_H_ */

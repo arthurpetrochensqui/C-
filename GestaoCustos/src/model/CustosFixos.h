@@ -10,13 +10,20 @@
 
 #include "Custos.h"
 #include <list>
+#include <iostream>
+#include <iomanip>
+#include <string>
 
 namespace std {
 
 class CustosFixos: public Custos {
+
+	friend ostream &operator<<(ostream &, const CustosFixos &);
+	friend istream &operator>>(istream &, CustosFixos &);
+
 public:
 	CustosFixos();
-	CustosFixos(int, string);
+	CustosFixos(int, string,int);
 
 	//Implement Method that return sum of account
 	double returnTotal() const;
@@ -25,7 +32,7 @@ public:
 	template<typename T> void listarCustos(const list<T>&listRef);
 
 private:
-	string nome;
+	//string nome;
 
 };
 

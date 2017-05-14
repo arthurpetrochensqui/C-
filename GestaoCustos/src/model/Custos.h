@@ -15,15 +15,18 @@ namespace std {
 class Custos {
 public:
 	Custos();
-	Custos(int, string);
+	Custos(int, string,int);
 
 	//Encapsulamento codigo
 	void setCodigo(int);
-	int getCodigo();
+	int getCodigo()const;
 
 	//Encapsulamento nome
 	void setNome(string);
-	string getNome();
+	string getNome() const;
+
+	void setCodigoContabil(int);
+	int getCodigoContabil() const;
 
 	//Implement method returnTotalAccount
 	virtual double returnTotal() const=0;
@@ -34,7 +37,8 @@ public:
 
 protected:
 	int codigo;
-	string nome;
+	int codigoContabil;
+	char nome[30];
 };
 
 } /* namespace std */
