@@ -100,6 +100,8 @@ bool PneusControl::inserirPneu(){
 		fstream fs("pneus.dat",ios::in|ios::out|ios::binary);
 		if(!fs){
 			cerr<<"Não foi possivel abrir o arquivo pneu";
+			exit(1);
+
 		}
 
 		int codigo = getCodigo("Insira um codigo");
@@ -178,16 +180,16 @@ bool PneusControl::alterarPneu(){
 			double valor;
 			int vidaUtil;
 
-			cout<<"\Insira a quilometragem :";
+			cout<<"\Insira a quilometragem :"<<endl;
 			cin>>quilometragem;
 
-			cout<<"\Insira eixo";
+			cout<<"\Insira eixo"<<endl;
 			cin>>eixo;
 
-			cout<<"\Insira o valor";
+			cout<<"\Insira o valor"<<endl;
 			cin>>valor;
 
-			cout<<"\nInsira a vida util";
+			cout<<"\nInsira a vida util"<<endl;
 			cin>>vidaUtil;
 
 			p.setQuilometragem(quilometragem);
@@ -235,7 +237,7 @@ bool PneusControl::removerPneu(){
 
 			fs.seekp((codigo -1)* sizeof(Pneus));
 
-			fs.write(reinterpret_cast<char *>(&p),sizeof(Pneus));
+			fs.write(reinterpret_cast<char *>(&pVazio),sizeof(Pneus));
 			removeu=true;
 			cout<<"Pneu #"<<codigo <<" removido\n";
 		}else{
